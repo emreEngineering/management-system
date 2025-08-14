@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.managementsystem.Controller">
+    <top>
+        <VBox spacing="10" styleClass="title-bar">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
+            <Label styleClass="title-label" text="Depo Yönetim Sistemi"/>
+        </VBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Çalışanlar">
+                <VBox spacing="10" styleClass="panel-with-shadow">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10"/>
+                    </padding>
+
+                    <TableView fx:id="employeeTableView" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="empIdColumn" prefWidth="50" text="ID"/>
+                            <TableColumn fx:id="empFirstNameColumn" prefWidth="100" text="Ad"/>
+                            <TableColumn fx:id="empLastNameColumn" prefWidth="100" text="Soyad"/>
+                            <TableColumn fx:id="empEmailColumn" prefWidth="150" text="E-posta"/>
+                            <TableColumn fx:id="empPhoneColumn" prefWidth="120" text="Telefon"/>
+                            <TableColumn fx:id="empDobColumn" prefWidth="100" text="Doğum Tarihi"/>
+                            <TableColumn fx:id="empSalaryColumn" prefWidth="80" text="Maaş"/>
+                            <TableColumn fx:id="empHireDateColumn" prefWidth="100" text="İşe Giriş Tarihi"/>
+                            <TableColumn fx:id="empPositionColumn" prefWidth="120" text="Pozisyon"/>
+                            <TableColumn fx:id="empWarehouseIdColumn" prefWidth="70" text="Depo ID"/>
+                        </columns>
+                    </TableView>
+
+
+                    <TitledPane collapsible="false" text="Çalışan Bilgileri">
+                        <GridPane hgap="10" vgap="10" styleClass="grid-pane">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10"/>
+                            </padding>
+
+
+                            <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <TextField fx:id="empIdField" disable="true" promptText="Otomatik" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label text="Ad:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            <TextField fx:id="empFirstNameField" promptText="Ad" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label text="Soyad:" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                            <TextField fx:id="empLastNameField" promptText="Soyad" GridPane.columnIndex="5"
+                                       GridPane.rowIndex="0"/>
+
+
+                            <Label text="E-posta:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <TextField fx:id="empEmailField" promptText="E-posta" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+
+                            <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                            <TextField fx:id="empPhoneField" promptText="Telefon" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="1"/>
+
+                            <Label text="Doğum Tarihi:" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                            <DatePicker fx:id="empDobPicker" promptText="YYYY-MM-DD" GridPane.columnIndex="5"
+                                        GridPane.rowIndex="1"/>
+
+
+                            <Label text="Maaş:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <TextField fx:id="empSalaryField" promptText="Maaş" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="2"/>
+
+                            <Label text="İşe Giriş:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                            <DatePicker fx:id="empHireDatePicker" promptText="YYYY-MM-DD" GridPane.columnIndex="3"
+                                        GridPane.rowIndex="2"/>
+
+                            <Label text="Pozisyon:" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+                            <TextField fx:id="empPositionField" promptText="Pozisyon" GridPane.columnIndex="5"
+                                       GridPane.rowIndex="2"/>
+
+
+                            <Label text="Depo ID:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                            <TextField fx:id="empWarehouseIdField" promptText="Depo ID" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="3"/>
+
+
+                            <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="hbox" GridPane.columnIndex="0"
+                                  GridPane.columnSpan="6" GridPane.rowIndex="4">
+                                <Button fx:id="empAddButton" styleClass="add-button" onAction="#handleAddEmployee"
+                                        text="Ekle"/>
+                                <Button fx:id="empUpdateButton" styleClass="update-button"
+                                        onAction="#handleUpdateEmployee" text="Güncelle"/>
+                                <Button fx:id="empDeleteButton" styleClass="delete-button"
+                                        onAction="#handleDeleteEmployee" text="Sil"/>
+                                <Button fx:id="empClearButton" onAction="#handleClearEmployeeForm" text="Temizle"/>
+                                <Button fx:id="empListButton" styleClass="list-button"
+                                        onAction="#handleListEmployeeForm" text="Listele"/>
+                            </HBox>
+                            <columnConstraints>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
+                    </TitledPane>
+                </VBox>
+            </Tab>
+
+            <Tab text="Ürünler">
+                <VBox spacing="10" styleClass="panel-with-shadow">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10"/>
+                    </padding>
+
+
+                    <TableView fx:id="productTableView" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="prodIdColumn" prefWidth="50" text="ID"/>
+                            <TableColumn fx:id="prodNameColumn" prefWidth="150" text="Ad"/>
+                            <TableColumn fx:id="prodCategoryColumn" prefWidth="100" text="Kategori"/>
+                            <TableColumn fx:id="prodPriceColumn" prefWidth="80" text="Fiyat"/>
+                            <TableColumn fx:id="prodQuantityColumn" prefWidth="80" text="Miktar"/>
+                            <TableColumn fx:id="prodSupplierColumn" prefWidth="120" text="Tedarikçi"/>
+                            <TableColumn fx:id="prodAddedDateColumn" prefWidth="120" text="Eklenme Tarihi"/>
+                            <TableColumn fx:id="prodWarehouseIdColumn" prefWidth="70" text="Depo ID"/>
+                        </columns>
+                    </TableView>
+
+
+                    <TitledPane collapsible="false" text="Ürün Bilgileri">
+                        <GridPane hgap="10" vgap="10" styleClass="grid-pane">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10"/>
+                            </padding>
+
+
+                            <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <TextField fx:id="prodIdField" disable="true" promptText="Otomatik" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label text="Ad:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            <TextField fx:id="prodNameField" promptText="Ürün Adı" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label text="Kategori:" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                            <TextField fx:id="prodCategoryField" promptText="Kategori" GridPane.columnIndex="5"
+                                       GridPane.rowIndex="0"/>
+
+
+                            <Label text="Fiyat:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <TextField fx:id="prodPriceField" promptText="Fiyat" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+
+                            <Label text="Miktar:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                            <TextField fx:id="prodQuantityField" promptText="Miktar" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="1"/>
+
+                            <Label text="Tedarikçi:" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                            <TextField fx:id="prodSupplierField" promptText="Tedarikçi" GridPane.columnIndex="5"
+                                       GridPane.rowIndex="1"/>
+
+
+                            <Label text="Eklenme Tarihi:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <DatePicker fx:id="prodAddedDatePicker" promptText="YYYY-MM-DD" GridPane.columnIndex="1"
+                                        GridPane.rowIndex="2"/>
+
+                            <Label text="Depo ID:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                            <TextField fx:id="prodWarehouseIdField" promptText="Depo ID" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="2"/>
+
+
+                            <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="hbox" GridPane.columnIndex="0"
+                                  GridPane.columnSpan="6" GridPane.rowIndex="3">
+                                <Button fx:id="prodAddButton" styleClass="add-button" onAction="#handleAddProduct"
+                                        text="Ekle"/>
+                                <Button fx:id="prodUpdateButton" styleClass="update-button"
+                                        onAction="#handleUpdateProduct" text="Güncelle"/>
+                                <Button fx:id="prodDeleteButton" styleClass="delete-button"
+                                        onAction="#handleDeleteProduct" text="Sil"/>
+                                <Button fx:id="prodClearButton" onAction="#handleClearProductForm" text="Temizle"/>
+                                <Button fx:id="prodListButton" styleClass="list-button"
+                                        onAction="#handleListProductForm" text="Listele"/>
+                            </HBox>
+                            <columnConstraints>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
+                    </TitledPane>
+                </VBox>
+            </Tab>
+
+            <Tab text="Depolar">
+                <VBox spacing="10" styleClass="panel-with-shadow">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10"/>
+                    </padding>
+
+
+                    <TableView fx:id="warehouseTableView" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="whIdColumn" prefWidth="50" text="ID"/>
+                            <TableColumn fx:id="whNameColumn" prefWidth="150" text="Ad"/>
+                            <TableColumn fx:id="whCapacityColumn" prefWidth="100" text="Kapasite"/>
+                            <TableColumn fx:id="whCreatedAtColumn" prefWidth="120" text="Oluşturulma Tarihi"/>
+                            <TableColumn fx:id="whLocationColumn" prefWidth="150" text="Konum"/>
+                            <TableColumn fx:id="whManagerColumn" prefWidth="120" text="Yönetici"/>
+                            <TableColumn fx:id="whPhoneColumn" prefWidth="120" text="Telefon"/>
+                        </columns>
+                    </TableView>
+
+
+                    <TitledPane collapsible="false" text="Depo Bilgileri">
+                        <GridPane hgap="10" vgap="10" styleClass="grid-pane">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10"/>
+                            </padding>
+
+
+                            <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <TextField fx:id="whIdField" disable="true" promptText="Otomatik" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label text="Ad:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            <TextField fx:id="whNameField" promptText="Depo Adı" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label text="Kapasite:" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                            <TextField fx:id="whCapacityField" promptText="Kapasite" GridPane.columnIndex="5"
+                                       GridPane.rowIndex="0"/>
+
+
+                            <Label text="Oluşturulma Tarihi:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <DatePicker fx:id="whCreatedAtPicker" promptText="YYYY-MM-DD" GridPane.columnIndex="1"
+                                        GridPane.rowIndex="1"/>
+
+                            <Label text="Konum:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                            <TextField fx:id="whLocationField" promptText="Konum" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="1"/>
+
+
+                            <Label text="Yönetici:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <TextField fx:id="whManagerField" promptText="Yönetici" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="2"/>
+
+                            <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                            <TextField fx:id="whPhoneField" promptText="Telefon" GridPane.columnIndex="3"
+                                       GridPane.rowIndex="2"/>
+
+
+                            <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="hbox" GridPane.columnIndex="0"
+                                  GridPane.columnSpan="6" GridPane.rowIndex="3">
+                                <Button fx:id="whAddButton" styleClass="add-button" onAction="#handleAddWarehouse"
+                                        text="Ekle"/>
+                                <Button fx:id="whUpdateButton" styleClass="update-button"
+                                        onAction="#handleUpdateWarehouse" text="Güncelle"/>
+                                <Button fx:id="whDeleteButton" styleClass="delete-button"
+                                        onAction="#handleDeleteWarehouse" text="Sil"/>
+                                <Button fx:id="whClearButton" onAction="#handleClearWarehouseForm" text="Temizle"/>
+                                <Button fx:id="whListButton" styleClass="list-button"
+                                        onAction="#handleListWarehouseForm" text="Listele"/>
+                            </HBox>
+                            <columnConstraints>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
+                    </TitledPane>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="footer">
+            <padding>
+                <Insets bottom="5" left="10" right="10" top="5"/>
+            </padding>
+            <Label styleClass="footer-text" text="Depo Yönetim Sistemi © 2025"/>
+        </HBox>
+    </bottom>
+</BorderPane>
