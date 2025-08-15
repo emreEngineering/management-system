@@ -8,13 +8,19 @@ Bu proje, **JavaFX** ve **MySQL** kullanarak geliştirilmiş bir **Depo ve Lojis
 - Çalışan ekleme, listeleme, güncelleme ve silme  
 - Çalışanların depo atamalarını yapma  
 
+![employee](management-systtem-employee.png)
+
 ✅ **Ürün Yönetimi**  
 - Ürün ekleme, listeleme, güncelleme ve silme  
 - Ürünlerin depolar ile ilişkilendirilmesi  
 
+![products](management-system-products.png)
+
 ✅ **Depo Yönetimi**  
 - Depo ekleme, listeleme, güncelleme ve silme  
 - Depo kapasitesini ve yöneticisini belirleme  
+
+![warhosues](management-system-warhouses.png)
 
 ✅ **Modern Arayüz**  
 - Kullanıcı dostu **JavaFX** tabanlı UI  
@@ -116,22 +122,6 @@ java --module-path "javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml -c
   - `App.java` dosyasını açın.  
   - **Run** butonuna basarak uygulamayı çalıştırın.  
 
----
-
-## 📸 Ekran Görüntüleri
-
-### **Çalışan Yönetimi**
-![Ekran görüntüsü 2025-03-24 225301](https://github.com/user-attachments/assets/1306dca4-446c-4bdd-896f-0bcf1409f71a)
-
-
-### **Ürün Yönetimi**
-![Ekran görüntüsü 2025-03-24 225326](https://github.com/user-attachments/assets/7f1809d7-863e-4cf1-b1e7-97ccb209c7c3)
-
-
-### **Depo Yönetimi**
-![Ekran görüntüsü 2025-03-24 225345](https://github.com/user-attachments/assets/611e001e-bd40-40ee-b775-82760f2c376d)
-
-
 
 ---
 
@@ -148,8 +138,6 @@ java --module-path "javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml -c
 - **Veritabanı Bağlantısı**:  
   - `DatabaseHelper` sınıfı MySQL bağlantısını yönetir.
  
-- **Resimdeki bilgiler örnektir**:
-  - Rastgele oluşturulmuştur. 
 
 ---
 
