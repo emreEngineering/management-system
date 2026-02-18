@@ -1,0 +1,19 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Build
+out/
+target/
+build/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+application-local.properties

@@ -1,0 +1,259 @@
+/* Root ve Genel Ayarlar */
+.root {
+    -fx-background-color: #F5F3FF;  /* Mora uyumlu açık bir tona güncelledim */
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* Başlık bölümü */
+.title-bar {
+    -fx-background-color: #6C5CE7;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 3.0);
+    -fx-background-radius: 5 5 0 0;
+}
+
+.title-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 2, 0.5, 1, 1);
+}
+
+/* Tab paneli */
+.tab-pane {
+    -fx-tab-min-width: 120px;
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #E2E7F0;
+    -fx-background-radius: 5 5 0 0;
+    -fx-text-fill: #4B4B4B;
+    -fx-font-weight: bold;
+}
+
+.tab:selected {
+    -fx-background-color: #6C5CE7;
+    -fx-text-fill: white;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #D1D8E6;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.tab .tab-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #4B4B4B;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+/* Tablo stilleri */
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #D1D8E6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0.2, 0, 2);
+}
+
+.table-view .column-header {
+    -fx-background-color: #6C5CE7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #F7F9FC;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #D6D1F8;
+    -fx-text-fill: #333333;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #E9E5FF;
+}
+
+/* Scroll bar stilleri */
+.scroll-bar {
+    -fx-background-color: #F0F3F8;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #A29BFE;
+    -fx-background-radius: 10px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #6C5CE7;
+}
+
+/* Titled Pane */
+.titled-pane {
+    -fx-text-fill: #4B4B4B;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.1, 0, 1);
+}
+
+.titled-pane > .title {
+    -fx-background-color: #E2E7F0;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.titled-pane:expanded > .title {
+    -fx-background-color: #6C5CE7;
+    -fx-text-fill: white;
+}
+
+.titled-pane > .content {
+    -fx-background-color: white;
+    -fx-border-color: #D1D8E6;
+    -fx-border-radius: 0 0 5 5;
+    -fx-background-radius: 0 0 5 5;
+}
+
+/* Form alanları */
+.label {
+    -fx-text-fill: #4B4B4B;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+}
+
+.text-field {
+    -fx-background-color: #E9E5FF;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 7px;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused {
+    -fx-background-color: #D6D1F8;
+    -fx-border-color: #6C5CE7;
+}
+
+.date-picker {
+    -fx-background-color: #E9E5FF;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #6C5CE7;
+    -fx-background-radius: 0 4 4 0;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+/* Butonlar */
+.button {
+    -fx-background-color: #FF7675;
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 13px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.2, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #E56767;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.3, 0, 2);
+}
+
+.add-button {
+    -fx-background-color: #00B894;
+    -fx-text-fill: white;
+}
+
+.add-button:hover {
+    -fx-background-color: #00A383;
+}
+
+.update-button {
+    -fx-background-color: #6C5CE7;
+    -fx-text-fill: white;
+}
+
+.update-button:hover {
+    -fx-background-color: #5245CA;
+}
+
+.delete-button {
+    -fx-background-color: #FF7675;
+    -fx-text-fill: white;
+}
+
+.delete-button:hover {
+    -fx-background-color: #E56767;
+}
+
+.list-button {
+    -fx-background-color: #FDCB6E;
+    -fx-text-fill: #4B4B4B;
+}
+
+.list-button:hover {
+    -fx-background-color: #F0BD5D;
+}
+
+/* Footer */
+.footer {
+    -fx-background-color: #4B4B4B;
+    -fx-padding: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, -3.0);
+    -fx-background-radius: 0 0 5 5;
+}
+
+.footer-text {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+/* Genel içerik konteyner paneller */
+.grid-pane {
+    -fx-hgap: 12px;
+    -fx-vgap: 12px;
+    -fx-padding: 20px;
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0.2, 0, 2);
+}
+
+.hbox, .vbox {
+    -fx-spacing: 10px;
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+}
+
+/* Opsiyonel: Panellere özel gölge efekti */
+.panel-with-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 10, 0, 0, 4);
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 15px;
+}
